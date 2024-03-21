@@ -48,7 +48,6 @@ def estimate_pose(video_path):
             results = model.predict(crop_frame, max_det=1, conf=conf, classes=0)
             if results[0].keypoints:
                 keypoints.append(results[0].keypoints.xyn)
-                #boxes.append(results[0].boxes.xyxy)
             else:
                 keypoints.append(None)
 
@@ -56,13 +55,13 @@ def estimate_pose(video_path):
             annotated_frame = results[0].plot()
 
             if prev_bbox is not None:
-                # Adjust annotated_frame to fit into the original frame (for visualization, optional)
+                # Adjust annotated_frame to fit into the original frame for visualization
                 frame[y1:y2, x1:x2] = annotated_frame
                 annotated_frame = frame
 
             # Update prev_bbox using the detection results
             if len(results[0]) > 0:  # Check if there is at least one detection
-                bbox = results[0].boxes[0].xyxy[0].numpy()  # Convert to numpy array
+                bbox = results[0].boxes[0].xyxy[0].numpy()
                 if prev_bbox is not None:
                     # Adjust the bounding box to original frame's coordinates if cropped
                     prev_bbox = [int(bbox[0]) + x1, int(bbox[1]) + y1, int(bbox[2]) + x1, int(bbox[3]) + y1]
