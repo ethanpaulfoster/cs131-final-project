@@ -1,0 +1,4 @@
+Welcome to my CS131 Final Project: Diving into Computer Vision: Using Computer Vision to Extract Springboard Diving Information
+
+My code should be working so that you can step through Demo.ipynb to see my project and how I am able to estimate a diver's height, distance, and position in the air using computer vision methods such as calibration, projection, object tracking, pose estimation, and neural networks.
+Make sure you install ultralytics and openCV and any other necessary dependencies to allow Demo.ipynb to work. I have also included 3 videos to show my progress throughout the project. "105b.mov" shows a clip of a diver performing a dive. "105b_Tracking.mov" includes the person detection and tracking using YOLOv8 by Ultralytics. "105b_All_Predictions.mov" includes the position, height, and distance computations as completed by Demo.ipynb.
